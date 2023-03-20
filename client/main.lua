@@ -14,7 +14,6 @@
 
 local running = false
 local outcome = 123
-
 local isVisible = false
 function startMinigame()
     setDifficulty()
@@ -30,12 +29,13 @@ function startMinigame()
 end
 
 local diff = nil
+local difficulty = nil
 function setDifficulty()
-    if Config.difficulty == 1 then
+    if difficulty == 1 then
         diff = math.random(9, 15)
-    elseif Config.difficulty == 2 then
+    elseif difficulty == 2 then
         diff = math.random(6, 9)
-    elseif Config.difficulty == 3 then
+    elseif difficulty == 3 then
         diff = math.random(2, 6)
     end
     SendNUIMessage({setDifficulty = diff; })
@@ -81,7 +81,8 @@ Citizen.CreateThread(function()
     end
 end)
 
-AddEventHandler("dd_minigame:start", function(cb)
+AddEventHandler("dd_minigame:start", function(diff, cb)
+    difficulty = diff
     callback = cb
 	startMinigame()
 end)

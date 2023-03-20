@@ -2,8 +2,8 @@ fx_version 'cerulean'
 game 'gta5'
 
 author 'DARK DESIGNS'
-description 'An click time event minigame'
-version '1.0.0'
+description 'An click event minigame'
+version '1.1.0'
 
 lua54 'on'
 
