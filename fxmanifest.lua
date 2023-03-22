@@ -3,7 +3,7 @@ game 'gta5'
 
 author 'DARK DESIGNS'
 description 'An click event minigame'
-version '1.1.0'
+version '1.3.0'
 
 lua54 'on'
 
@@ -17,6 +17,5 @@ files {
 }
 
 client_scripts {
-    'config.lua',
-    'client/main.lua',
+    'client/main.lua'
 }

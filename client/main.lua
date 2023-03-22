@@ -14,6 +14,7 @@
 
 local running = false
 local outcome = 123
+local waitingTime = 20
 local isVisible = false
 function startMinigame()
     setDifficulty()
@@ -77,11 +78,12 @@ Citizen.CreateThread(function()
             end
             SendNUIMessage({progress = count; })
         end
-        Citizen.Wait(30)
+        Citizen.Wait(waitingTime)
     end
 end)
 
-AddEventHandler("dd_minigame:start", function(diff, cb)
+AddEventHandler("dd_minigame:start", function(diff, time, cb)
+    waitingTime = time
     difficulty = diff
     callback = cb
 	startMinigame()

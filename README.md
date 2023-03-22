@@ -21,11 +21,19 @@ Installation:
 Support:
 Yes! We Support all our scripts on our Discord(https://discord.gg/J5EEGnfhuE)
 
+Documentation:
+You can have a look on our Documentation for more informations about the script:
+https://darkdesigns.gitbook.io/dd_minigame/
+
 How to use:
 You just need to put the Event-Trigger into your code and you will get and outcome as "true" or "false".
+
+difficulty = number between 1 and 3 (1 Low Difficulty and 3 High Difficulty)
+time = the time that the minigame runs (default = 20)
+
 Here an example:
 
-TriggerEvent("dd_minigame:start", function(outcome)
+TriggerEvent("dd_minigame:start",difficulty, time function(outcome)
     if outcome == true then
         print("DONE")
     elseif outcome == false then
